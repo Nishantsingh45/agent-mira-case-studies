@@ -1,0 +1,110 @@
+"""Mocked address -> property-feature lookup.
+
+The case study explicitly allows mocked data in place of scraping.
+Keys are normalized (lowercase, collapsed whitespace) so user input is
+matched leniently. See `normalize_address` in main.py.
+"""
+
+MOCK_PROPERTIES = {
+    "123 maple street, austin, tx": {
+        "property_type": "SFH",
+        "lot_area": 6200,
+        "building_area": 0,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "year_built": 2012,
+        "has_pool": False,
+        "has_garage": True,
+        "school_rating": 8,
+    },
+    "742 evergreen terrace, springfield, il": {
+        "property_type": "SFH",
+        "lot_area": 8000,
+        "building_area": 0,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "year_built": 1998,
+        "has_pool": True,
+        "has_garage": True,
+        "school_rating": 7,
+    },
+    "1600 ocean drive, miami, fl": {
+        "property_type": "Condo",
+        "lot_area": 0,
+        "building_area": 1450,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "year_built": 2018,
+        "has_pool": True,
+        "has_garage": False,
+        "school_rating": 9,
+    },
+    "350 fifth avenue, new york, ny": {
+        "property_type": "Condo",
+        "lot_area": 0,
+        "building_area": 950,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "year_built": 2005,
+        "has_pool": False,
+        "has_garage": False,
+        "school_rating": 9,
+    },
+    "21 jump street, los angeles, ca": {
+        "property_type": "SFH",
+        "lot_area": 5400,
+        "building_area": 0,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "year_built": 1985,
+        "has_pool": True,
+        "has_garage": True,
+        "school_rating": 6,
+    },
+    "88 lakefront way, chicago, il": {
+        "property_type": "SFH",
+        "lot_area": 9200,
+        "building_area": 0,
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "year_built": 2020,
+        "has_pool": False,
+        "has_garage": True,
+        "school_rating": 10,
+    },
+    "500 market plaza, san francisco, ca": {
+        "property_type": "Condo",
+        "lot_area": 0,
+        "building_area": 1100,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "year_built": 2015,
+        "has_pool": True,
+        "has_garage": True,
+        "school_rating": 8,
+    },
+    "12 oakwood lane, boston, ma": {
+        "property_type": "SFH",
+        "lot_area": 4800,
+        "building_area": 0,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "year_built": 1972,
+        "has_pool": False,
+        "has_garage": False,
+        "school_rating": 7,
+    },
+}
+
+
+DEFAULT_PROPERTY = {
+    "property_type": "SFH",
+    "lot_area": 5000,
+    "building_area": 0,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "year_built": 2000,
+    "has_pool": False,
+    "has_garage": True,
+    "school_rating": 6,
+}

@@ -3,6 +3,19 @@
 A full-stack web app that compares two properties side-by-side and shows
 predicted prices from the provided ML model.
 
+## 🔗 Live demo
+
+**<https://agent-mira-case-studies.vercel.app/>**
+
+Backend: FastAPI deployed to Render (free tier — first request after
+15 min idle takes ~30 s to wake).
+
+![Price Comparator UI](../docs/screenshots/price-comparator.png)
+
+*Example: comparing an older Boston SFH against a newer Austin SFH. The
+emerald ring highlights the more expensive property; the diff is shown
+below.*
+
 ## Stack
 
 - **Backend:** Python 3.x + FastAPI + Uvicorn

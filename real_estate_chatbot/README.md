@@ -5,6 +5,20 @@ location → budget → bedrooms, then displaying matching properties from
 three merged JSON sources. Users can save favorites; saved properties
 persist (MongoDB when configured, in-memory otherwise).
 
+## 🔗 Live demo
+
+**<https://agent-mira-case-studies-hxwm.vercel.app/>**
+
+Backend: Express deployed to Render (free tier — first request after
+15 min idle takes ~30 s to wake). OpenAI NLP mode is enabled, so the
+chat header shows the **"AI mode"** badge and you can type free-form
+queries like *"3 BR in New York under 500k"*.
+
+![Mira chatbot — AI mode](../docs/screenshots/chatbot-ai-mode.png)
+
+*Example: Mira confirming a parsed search ("New York, $400,000, 1 BR"),
+finding the Central Park studio, and saving it to the right sidebar.*
+
 ## Stack
 
 - **Frontend:** Vite + React 19 + Tailwind CSS v4

@@ -9,6 +9,7 @@ state. The class must be defined in this module *before* unpickling, and
 its `predict()` provides the actual scoring logic.
 """
 
+import os
 import pickle
 import re
 from pathlib import Path
@@ -69,9 +70,16 @@ with MODEL_PATH.open("rb") as f:
 
 app = FastAPI(title="Property Comparison API")
 
+# Comma-separated list of allowed origins. Defaults to localhost dev origins.
+# In production (Render), set CORS_ORIGINS to your Vercel URL.
+_default_origins = "http://localhost:5173,http://127.0.0.1:5173"
+allowed_origins = [
+    o.strip() for o in os.getenv("CORS_ORIGINS", _default_origins).split(",") if o.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
